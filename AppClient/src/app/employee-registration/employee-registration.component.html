@@ -35,7 +35,7 @@
         <br>
         <div class="col-lg-10 col-sm-9 col-9">
           <label for="dob">Date Of Birth</label>
-          <input class="form-control" type="date" id="dob" formControlName="dob" min="1991-01-01" max="2018-12-31" />
+          <input class="form-control" type="date" id="dob" formControlName="dob" min="1960-01-01" max="2017-12-31" />
           <span *ngIf="!employeeRegForm.get('dob').valid && employeeRegForm.get('dob').touched" class="help-block">Please
             enter DOB</span>
         </div>

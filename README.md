@@ -15,3 +15,10 @@ Steps:
 1. Clone the project
 2. Do `mvn clean install`
 3. Run the generated jar with `java -jar outputJar`
+
+
+To Check the Swagger Configuration:
+https://employee-manage.herokuapp.com/v2/api-docs
+
+Swagger UI:
+https://employee-manage.herokuapp.com/swagger-ui.html#/

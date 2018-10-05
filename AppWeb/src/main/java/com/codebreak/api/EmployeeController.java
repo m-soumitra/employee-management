@@ -20,6 +20,8 @@ import com.codebreak.documents.EmployeeRegistrationDTO;
 import com.codebreak.dto.CommonListWrapperDTO;
 import com.codebreak.repository.EmployeeRepository;
 
+import io.swagger.annotations.ApiOperation;
+
 /**
  * 
  * @author smohakud
@@ -31,12 +33,6 @@ public class EmployeeController {
 
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	private List<EmployeeRegistrationDTO> employeesList = new ArrayList<>();
-
-	{
-		employeesList.add(new EmployeeRegistrationDTO("Amar", "Gonsalvez", "Male", "1960-01-01", "HR"));
-	}
-
 	@Autowired
 	@Qualifier("employeeRepository")
 	private EmployeeRepository employeeRepository;
@@ -46,6 +42,7 @@ public class EmployeeController {
 	 * 
 	 * @return
 	 */
+	@ApiOperation(value = "View a list of registered users", response = CommonListWrapperDTO.class)
 	@GetMapping(value = "/fetchemployees")
 	public CommonListWrapperDTO<EmployeeRegistrationDTO> fetchRegisteredEmployees() {
 		logger.info("{}", employeeRepository);
@@ -67,7 +64,6 @@ public class EmployeeController {
 	public CommonListWrapperDTO<EmployeeRegistrationDTO> registerEmployee(
 			@RequestBody @Valid EmployeeRegistrationDTO employeeDetails) {
 		employeeRepository.save(employeeDetails);
-		employeesList.add(employeeDetails);
 		CommonListWrapperDTO<EmployeeRegistrationDTO> commonListWrapperDTO = new CommonListWrapperDTO<>();
 		commonListWrapperDTO.setMessage("Registered Users");
 		commonListWrapperDTO.setStatus(200);
