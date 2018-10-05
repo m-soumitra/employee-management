@@ -49,11 +49,11 @@ public class EmployeeController {
 	@GetMapping(value = "/fetchemployees")
 	public CommonListWrapperDTO<EmployeeRegistrationDTO> fetchRegisteredEmployees() {
 		logger.info("{}", employeeRepository);
-		// return employeeRepository.findAll();
+		List<EmployeeRegistrationDTO> returnedList = employeeRepository.findAll();
 		CommonListWrapperDTO<EmployeeRegistrationDTO> commonListWrapperDTO = new CommonListWrapperDTO<>();
 		commonListWrapperDTO.setMessage("Retrieved Registered Users");
 		commonListWrapperDTO.setStatus(200);
-		commonListWrapperDTO.setResults(employeesList);
+		commonListWrapperDTO.setResults(returnedList);
 		return commonListWrapperDTO;
 	}
 
@@ -66,7 +66,7 @@ public class EmployeeController {
 	@RequestMapping(value = "/registeremployee", method = RequestMethod.POST)
 	public CommonListWrapperDTO<EmployeeRegistrationDTO> registerEmployee(
 			@RequestBody @Valid EmployeeRegistrationDTO employeeDetails) {
-		// return employeeRepository.save(employeeDetails);
+		employeeRepository.save(employeeDetails);
 		employeesList.add(employeeDetails);
 		CommonListWrapperDTO<EmployeeRegistrationDTO> commonListWrapperDTO = new CommonListWrapperDTO<>();
 		commonListWrapperDTO.setMessage("Registered Users");
@@ -75,7 +75,6 @@ public class EmployeeController {
 		returnedList.add(employeeDetails);
 		commonListWrapperDTO.setResults(returnedList);
 		return commonListWrapperDTO;
-		// return employeeDetails;
 	}
 
 }
