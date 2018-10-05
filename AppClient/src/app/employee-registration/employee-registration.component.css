@@ -1,0 +1,11 @@
+.form-control.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+label {
+    font-weight:bold
+}

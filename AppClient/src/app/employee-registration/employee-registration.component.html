@@ -1,0 +1,60 @@
+<div class="container">
+  <div>
+    <form [formGroup]="employeeRegForm">
+      <div class="col-lg-10 col-sm-9 col-9">
+        <div class="form-group col-lg-10 col-sm-9 col-9">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" formControlName="firstName" id="firstName">
+          <span *ngIf="!employeeRegForm.get('firstName').valid && employeeRegForm.get('firstName').touched" class="help-block">Please
+            enter First Name</span>
+        </div>
+        <div class="form-group col-lg-10 col-sm-9 col-9">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" formControlName="lastName" id="lastName">
+          <span *ngIf="!employeeRegForm.get('lastName').valid && employeeRegForm.get('lastName').touched" class="help-block">Please
+            enter Last Name</span>
+        </div>
+        <!-- <div class="input-group col-lg-10 col-sm-9 col-9">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="gender">Gender</label>
+          </div>
+          <select class="custom-select" id="gender" formControlName="gender">
+            <option *ngFor="let gender of genders">{{gender}}</option>
+          </select>
+        </div> -->
+        <div class="input-group col-lg-10 col-sm-9 col-9">
+          <label class="input-group-text" for="department">Gender</label>
+          <div class="radio form-control" *ngFor="let gender of genders">
+            <label>
+              <input type="radio" [value]="gender" formControlName="gender">{{ gender }}
+            </label>
+          </div>
+          <span *ngIf="!employeeRegForm.get('gender').valid && employeeRegForm.get('gender').touched" class="help-block">Please
+            select Gender</span>
+        </div>
+        <br>
+        <div class="col-lg-10 col-sm-9 col-9">
+          <label for="dob">Date Of Birth</label>
+          <input class="form-control" type="date" id="dob" formControlName="dob" min="1991-01-01" max="2018-12-31" />
+          <span *ngIf="!employeeRegForm.get('dob').valid && employeeRegForm.get('dob').touched" class="help-block">Please
+            enter DOB</span>
+        </div>
+        <br>
+        <div class="input-group col-lg-10 col-sm-9 col-9">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="department">Department</label>
+          </div>
+          <select class="custom-select" id="department" formControlName="department">
+            <option *ngFor="let dept of departments">{{dept}}</option>
+          </select>
+          <span *ngIf="!employeeRegForm.get('department').valid && employeeRegForm.get('department').touched" class="help-block">Please
+            select Department</span>
+        </div>
+        <br>
+        <div class="col-lg-4 col-sm-4 col-4">
+          <button type="submit" [disabled]="!employeeRegForm.valid" class="btn btn-success" (click)="onSubmit()">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

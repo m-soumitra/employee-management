@@ -1,0 +1,13 @@
+{
+    "message": "Registered Employees",
+    "status": 200,
+    "results": [
+        {
+            "firstName": "test",
+            "lastName": "Wayne",
+            "gender": "Male",
+            "dob": "1960-01-01",
+            "department": "HR"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+<!-- Static navbar -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['']" routerLinkActive>Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/registration']" routerLinkActive>Registration</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/registeredemployees']" routerLinkActive>Registered Employees</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<toaster-container></toaster-container>
+
+<!-- <div class="row">
+  <div class="col-md-12 col-xs-12 app-footer">
+    <footer id="app-footer">
+      <div id="app-copyright" class="col-md-9 col-xs-9" style="color:blue">
+        email: mohakud.soumitra@gmail.com
+      </div>
+      <div class="col-md-2 col-xs-2 pull-right">
+        Version : 1.0.0 &#169; {{_currentYear}}
+      </div>
+    </footer>
+  </div>
+</div> -->

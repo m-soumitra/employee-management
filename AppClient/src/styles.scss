@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+//@import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import '../node_modules/angular2-toaster/toaster';
+@import "../node_modules/font-awesome/css/font-awesome.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeicons/primeicons.css";
+
+.main {
+    margin-top: 90px;
+  }
+  
+  h2 {
+    margin: 0px;
+  }
+  
+  .app-header {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .app-footer {
+    @extend .app-header;
+    position: absolute !important;
+    bottom: 0;
+  }
+  

@@ -1,0 +1,51 @@
+<!-- <app-page-header [heading]="'Approve Request'" [icon]="'fa-table'"></app-page-header> -->
+<div class="row">
+    <div class="col col-xl-12 col-lg-12">
+        <div class="card mb-3">
+            <div class="card-header">
+                Registered Employess List
+            </div>
+            <div class="card-body table-responsive">
+
+                <p-toast [style]="{marginTop: '80px'}"></p-toast>
+                <p-paginator [rows]="10" [totalRecords]="registeredEmployees?.length" (onPageChange)="paginate($event)"></p-paginator>
+                <!-- <p-table [columns]="cols" [value]="registeredEmployees" dataKey="requestId" (onRowSelect)="onRowSelect($event)">
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th style="width: 3em"></th>
+                            <th *ngFor="let col of columns">
+                                {{col.header}}
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData let-columns="columns">
+                        <tr [pSelectableRow]="rowData">
+                            <td>
+                                <p-tableRadioButton [value]="rowData"></p-tableRadioButton>
+                            </td>
+                            <td *ngFor="let col of columns">
+                                {{rowData[col.field]}}
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table> -->
+                <p-table [columns]="cols" [value]="registeredEmployees">
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th *ngFor="let col of columns">
+                                {{col.header}}
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-car let-columns="columns">
+                        <tr>
+                            <td *ngFor="let col of columns">
+                                {{car[col.field]}}
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+</div>
